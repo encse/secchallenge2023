@@ -1,12 +1,13 @@
-Let's register a user and log in. We find a profile page with our account balance, username and a field that we can use
-to store any secret "which is perfectly safe" for ourselves. There is a password management page, a money transfer page 
-and a logout option.
+# A Jim Brown and an Ella Fitzgerald
+
+Let's register a user and log in. We find a profile page with our account balance, 
+username and a field that we can use to store any secret "which is perfectly safe" for ourselves. 
+There is a password management page, a money transfer page and a logout option.
 
 We can find Terry Benedict's user id by simply transfering $1 to each account starting from 1. 
 Soon after we reach user id 12 and get this message:
 
 <img width="488" alt="image" src="https://user-images.githubusercontent.com/6275775/230441813-e1a856fb-3437-4163-a88c-6c587c3fc014.png">
-
 
 Next step is overriding Benedict's password with the vulnerable password page which takes a user supplied
 user-id and the new password. Don't overcomplicate it, set it to 'a'.
