@@ -5,4 +5,9 @@ It was clear that we need to jailbreak the AI somehow. I thought that the AI has
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/6275775/231542156-7cde801a-21cb-4b6c-950d-3d9b94a4829b.png">
 
+Lot of trial and error went into this and
+the challenge was often unresponsive or 
+simply didnt work.
 
+But I really like this elegant solution and the whole idea was 
+fresh and reacts well to the recent advances in llm technology.
