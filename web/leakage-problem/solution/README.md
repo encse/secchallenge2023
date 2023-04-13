@@ -76,8 +76,8 @@ I also checked `/proc/1/cmdline`:
 /bin/sh -c apachectl start && node index.js
 ```
 
-Reading from '/proc/1/cwd/index.js/ didn't work. I think the cwd file (which is a symlink to the
-process' working directory has too restrictive access modifiers. But... maybe it is running in the `/app` 
+Reading from `/proc/1/cwd/index.js/` didn't work. I think the cwd file (which is a symlink to the
+process' working directory) has too restrictive access modifiers. But... maybe it is running in the `/app` 
 directory, let's try `/app/index.js`:
 
 ```javascript
