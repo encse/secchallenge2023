@@ -10,4 +10,4 @@ the challenge was often unresponsive or
 simply stoped working.
 
 But I really like this elegant solution. The whole idea was 
-fresh and reflects to the recent advances in LLM technology.
+fresh and reflects to the recent advances in LLM technology well.
