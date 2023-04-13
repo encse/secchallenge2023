@@ -1,6 +1,6 @@
 # Archives
 
-The famous Jedi Archives. The whole website has just a single text field, and whatever is wrote there it is just passed in to the URL in a GET query: `https://archives.secchallenge.crysys.hu/?search=apple`. There is no 
+The famous Jedi Archives. The whole website has just a single text field, and whatever is written ther, it is just passed to the same URL in a GET query: `https://archives.secchallenge.crysys.hu/?search=apple`. There is no 
 visible output, we need to reach out to our Jedi mindtricks.
 
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/6275775/231849498-aca5eb41-71a8-4e18-a102-1c25264a991c.png">
