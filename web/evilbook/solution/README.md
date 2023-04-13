@@ -8,12 +8,9 @@ Examining the source code after login reveals a link to the debug version of the
 https://debug-evilbook.secchallenge.crysys.hu/
 
 The nice thing about this other site is that it is running werkzeug / 
-Flask in debug mode, so we get a nice exception for every runtime error we trigger.
-
+Flask in debug mode, so we get a nice exception for every runtime error we trigger. 
 One way to use this is to delete the 'email' field from the password reset form,
-or *sending a text instead of a number* in the captcha field.
-
-The relevant url is https://debug-evilbook.secchallenge.crysys.hu/forgot-password.
+or *sending a text instead of a number* in the captcha field. The relevant url is https://debug-evilbook.secchallenge.crysys.hu/forgot-password.
 
 If we send in in some text instead of a number we get the following:
 
