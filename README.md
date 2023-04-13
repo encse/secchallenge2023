@@ -27,6 +27,7 @@ Crypto:
 
 Web:
 - [A Jim Brown and an Ella Fitzgerald](web/a-jim-brown-and-an-ella-fitzgerald/solution/README.md)
+- [Evilbook](web/evilbook/solution/README.md)
 
 Misc:
 - [RemembrAI](misc/remembrai/solution/README.md)
