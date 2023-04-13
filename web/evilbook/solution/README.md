@@ -4,7 +4,6 @@ Evilbook was a Python/Flask challenge. We are given a Facebook style social netw
 where we can register a new user and log in with it.   
 
 Examining the source code after login reveals a link to the debug version of the side:
-
 https://debug-evilbook.secchallenge.crysys.hu/
 
 The nice thing about this other site is that it is running werkzeug / 
