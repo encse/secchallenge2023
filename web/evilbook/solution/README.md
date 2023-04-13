@@ -29,7 +29,7 @@ If we send in in some text instead of a number we get the following:
 ```
 
 This tells us how the password is reset when the debug_answer is correct. Let's go back to the original website now. There is 
-an email in our news wall, let's try to steal this account with our new knowledge. 
+an email in our timeline, let's try to steal this account with our newly learned knowledge. 
 
 <img width="731" alt="image" src="https://user-images.githubusercontent.com/6275775/231820579-4e9f3346-1e6f-485f-8bef-4090f0a2c531.png">
 
@@ -37,4 +37,4 @@ We can write a Python script that resets the password and tries to log in with e
 that could be generated in the small time window between the sending of the password change request and 
 the arrival of the response. This is just a few trial and errors, about a 10 or 20 maximum.
 
-Now we can log in with the admin user and find the flag in his wall.
+Now we can log in with the admin user and find the flag in his timeline.
