@@ -3,13 +3,14 @@
 Evilbook was a Python/Flask challenge. We are given a Facebook style social networking side 
 where we can register a new user and log in with it.   
 
-Examining the source code after login reveals a link to the debug version of the side:
-https://debug-evilbook.secchallenge.crysys.hu/
+Examining the source code after login reveals a link to the debug version of the site:
+https://debug-evilbook.secchallenge.crysys.hu/.
 
 The nice thing about this other site is that it is running werkzeug / 
 Flask in debug mode, so we get a nice exception for every runtime error we trigger. 
 One way to use this is to delete the 'email' field from the password reset form,
-or *sending a text instead of a number* in the captcha field. The relevant url is https://debug-evilbook.secchallenge.crysys.hu/forgot-password.
+or *sending a text instead of a number* in the captcha field. The relevant url is 
+https://debug-evilbook.secchallenge.crysys.hu/forgot-password.
 
 If we send in in some text instead of a number we get the following:
 
@@ -28,7 +29,7 @@ If we send in in some text instead of a number we get the following:
                 password = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + string.punctuation) for _ in range(12))
 ```
 
-This tells us how the password is reset when the debug_answer is correct. Let's go back to the original website now. There is 
+This reveals how the password is reset when the user_answer is correct. Let's go back to the original website now. There is 
 an email in our timeline, let's try to steal this account with our newly learned knowledge. 
 
 <img width="731" alt="image" src="https://user-images.githubusercontent.com/6275775/231820579-4e9f3346-1e6f-485f-8bef-4090f0a2c531.png">
