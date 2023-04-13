@@ -6,7 +6,7 @@ visible output, we need to reach out to our Jedi mindtricks.
 <img width="497" alt="image" src="https://user-images.githubusercontent.com/6275775/231849498-aca5eb41-71a8-4e18-a102-1c25264a991c.png">
 
 Not this time, but it is something similar: blind NOSQL injection. I did my homework and
-learned about two things. First, regexps like `/(.+)+D/` can be really slow in JavaScript.
+learned about two things. First, regexps like `/(.*)*D/` can be really slow in JavaScript.
 
 ```bash
 > time node -e '/(.*)*D/.test("AAAAAAAAAAAAAAAAAAAAAAD")'
