@@ -9,5 +9,5 @@ Lot of trial and error went into this and
 the challenge was often unresponsive or 
 simply didnt work.
 
-But I really like this elegant solution and the whole idea was 
-fresh and reacts well to the recent advances in llm technology.
+But I really like this elegant solution. The whole idea was 
+fresh and reflects to the recent advances in LLM technology.
