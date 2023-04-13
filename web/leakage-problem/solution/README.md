@@ -34,9 +34,7 @@ and send this to the website:
      %remote;
      %send;
  ]>
-<form>
-<email>"</email>
-</form>
+<form />
 ```
 
 I can listen to the incoming requests in my server with:
