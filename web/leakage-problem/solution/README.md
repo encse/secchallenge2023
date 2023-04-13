@@ -119,7 +119,7 @@ app.listen(port);
 console.log(`GraphQL Server is ready at http://localhost:4200/graphql`);
 ```
 
-Bingo. We can now download the all the files mentioned in the import section (add .js to the 
+Bingo. We can now download all the files mentioned in the import section (add .js to the 
 filenames), soon we'll run into `data.js` which is kind of big and has some base64 encoded data in it. 
 This is some weird picture of Shrek with our most wanted flag.
 
