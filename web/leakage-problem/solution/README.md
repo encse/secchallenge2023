@@ -123,6 +123,6 @@ Bingo. We can now download all the files mentioned in the import section (add .j
 filenames), soon we'll run into `data.js` which is kind of big and has some base64 encoded data in it. 
 This is some weird picture of Shrek with our most wanted flag.
 
-It was not the intended way to solve the challenge, I avoided the whole grapql thing and
+This is not the intended way to solve the challenge, I avoided the whole grapql thing and
 I was lucky with looking into the `app` folder, but it was an educated guess which worked 
 this time.
