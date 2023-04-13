@@ -36,6 +36,6 @@ an email in our timeline, let's try to steal this account with our newly learned
 
 We can write a Python script that resets the password and tries to log in with every possible passwords 
 that could be generated in the small time window between the sending of the password change request and 
-the arrival of the response. This is just a few trial and errors, about a 10 or 20 maximum.
+the arrival of the response. This is just a few trial and errors, about 10 or 20 maximum.
 
 Now we can log in with the admin user and find the flag in his timeline.
