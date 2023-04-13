@@ -1,6 +1,6 @@
 # Evilbook
 
-Evilbook was a Python/Flask challenge. We are given a Facebook style social networking side 
+Evilbook was a Python/Flask challenge. It starts with a Facebook style social networking site 
 where we can register a new user and log in with it.   
 
 Examining the source code after login reveals a link to the debug version of the site:
