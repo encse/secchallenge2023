@@ -44,10 +44,12 @@ I can listen to the incoming requests in my server with:
 nc -l localhost 11111
 ```
 
-This works fine, I get the `/etc/passwd` file. What else can we steal? I looked around my 
-`/proc` folder in my linux machine and tried `/proc/self/cmdline` and `/proc/self/cwd/register.php`:
+This works fine, I get the `/etc/passwd` file. What else can we steal? I looked around the 
+`/proc` folder in my linux machine and for ideas then tried things like `/proc/self/cmdline`,
+`/proc/self/cwd/index.php` and `/proc/self/cwd/register.php`:
 
 ```php
+# register.php
 ...
 
 if( isset($creds->email)){
