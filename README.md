@@ -33,6 +33,7 @@ Web:
 - [Evilbook](web/evilbook/solution/README.md)
 - [Leakage problem](web/leakage-problem/solution/README.md)
 - [Archives](web/archives/solution/README.md)
+- [Initiative](web/initiative/solution/README.md)
 
 Misc:
 - [RemembrAI](misc/remembrai/solution/README.md)
