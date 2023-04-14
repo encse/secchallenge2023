@@ -3,7 +3,7 @@
 Raw power was really an introductory challenge. I took all printable characters in Python with:
 
 ```
-import itertools
+import string
 
 printable = string.printable:
 ```
