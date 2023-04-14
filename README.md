@@ -23,6 +23,7 @@ and hobbyists.
 I'll add a lot more, stay tuned.
 
 Crypto:
+- [raw power](crypto/raw-power/solution/README.md)
 - [Baby RSA](crypto/baby-rsa/solution/README.md)
 - [not-a-crypto-challenge](crypto/not-a-crypto-challenge/solution/README.md)
 - [FCCOAT](crypto/fccoat/solution/README.md)
