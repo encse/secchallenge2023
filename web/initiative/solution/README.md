@@ -1,6 +1,6 @@
 # Initiative
 
-*Initiative* has been the most complex web challenge this year. It always starts with a login page, and there is no difference here. Register a user and log. We get to a page where we can upload 'blueprints' which have a title and contain some arbitrary text
+*Initiative* has been the most complex web challenge this year. It always starts with a login page, and there is no difference here. Register a user and log in. We get to a page where we can upload 'blueprints' which have a title and contain some arbitrary text
 
 We can view select a blueprint from a list and view it. There is even some 'search' fucntionality that highlights the matching text.
 
