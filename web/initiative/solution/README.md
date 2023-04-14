@@ -89,15 +89,18 @@ The next step is to hijack the bot
 account somehow. Let's create a 
 small html file with some JavaScript in it.
 This will send a POST request to 
-whoever visits the page and set 
+whoever visits the page and changes 
 his own nickname to what we specify.
 
 We are not allowed to run scripts
 in the real website but nothing 
 prevents us from issuing a POST
-from out own site.
+from our own context.
 
-There is a little bit of hand-waving here, and there can be small syntax errors, but our `decoy.html` would be something like:
+There is a little bit of 
+hand-waving here, and there can 
+be small syntax errors, but 
+our `decoy.html` would be something like:
 
 ```html
 <html>
@@ -132,8 +135,8 @@ There is a little bit of hand-waving here, and there can be small syntax errors,
 </html>
 ```
 
-We need to host this html file somewhere, say at http://example.com:8000/decoy.html and send the 
-URL in the report page. Soon after the bot visits `decoy.html` and starts executing the script. 
+We need to host this file somewhere, say at http://example.com:8000/decoy.html and send the 
+URL to the report page. Soon after the bot visits `decoy.html` and starts executing the script. 
 It sets its own nickname then navigates to a random blueprint which 
 redirects it to http://example.com:8000 where we can capture the referrer and get a valid blueprint 
 uuid. 
