@@ -2,7 +2,7 @@
 
 *Initiative* has been the most complex web challenge this year. It always starts with a login page, and there is no difference here. Register a user and log in. We get to a page where we can upload 'blueprints' which have a title and contain some arbitrary text
 
-We can view select a blueprint from a list and view it. There is even some 'search' fucntionality that highlights the matching text.
+We can select a blueprint from a list to view it. There is even some 'search' functionality that highlights the matching text.
 
 <img width="727" alt="image" src="https://user-images.githubusercontent.com/6275775/232076164-c1c5c66e-8bfa-4080-b313-9ac4b7fd62ef.png">
 
@@ -103,7 +103,7 @@ There is a little bit of hand-waving here, and there can be small syntax errors,
 
 We need to host this html file somewhere, say at http://example.com:8000/decoy.html and send the 
 URL in the report page. Soon after the bot visits `decoy.html` and starts executing the script. 
-It sets its on nickname in the challenge site then navigates to a random blueprint which 
+It sets its own nickname then navigates to a random blueprint which 
 redirects it to http://example.com:8000 where we can capture the referrer and get a valid blueprint 
 uuid. 
 
@@ -111,7 +111,7 @@ That's progress!
 
 ### Now go for the flag...
 
-I was a bit surprised but we can load `https://initiative.secchallenge.crysys.hu` into an html object, 
+I was a bit surprised but we can load `https://initiative.secchallenge.crysys.hu` into an html `object` element, 
 and we can even check if it was loaded successfully.  The following function creates an object element
 loads an url and resolves a promise with the outcome of the load.
 
@@ -158,8 +158,23 @@ the victim's browser. We can call this function any time we need to send some me
  }
 ```
 
-I let you combine these and write the final function that figures out the flag character by character.
+## Putting it together
 
-First you need to collect a couple of blueprints, and find one that contains the word 'cd23', and once you have that you should be able to find the rest quite easily.
+I let you combine these and write 
+the final function that steals 
+the flag character by character.
 
-I didn't realize the trick with the referrer override, so my brute force for the flag was about 80x slower than doing it the right way... You should really start with finding the correct blueprint before progressing to the last stage.
+First you need to collect a couple 
+of blueprints, and find one that 
+contains the word 'cd23'. Once 
+you have that you should be able 
+to find the rest quite easily.
+
+I didn't realize the trick with 
+the referrer override, so my 
+brute force for the flag was 
+about 80x slower than doing it 
+the right way... You should
+really start with finding the 
+correct blueprint before 
+progressing to the last stage.
