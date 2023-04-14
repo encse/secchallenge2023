@@ -27,4 +27,4 @@ hashlib.sha256(key).hexdigest()
 hashlib.sha512(key).hexdigest()
 ```
 
-Tthe rest is just combining these Lego bricks. It's against the rules to provide a runnable script, so I let you do it on your own.
+The rest is just combining these Lego bricks. It's against the rules to provide a runnable script, so you have to do it on your own.
