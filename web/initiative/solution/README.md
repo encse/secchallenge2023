@@ -36,23 +36,37 @@ The 'nickname' is embeded verbatim into the html in the header of the page:
 
 We can break out from the title tag and insert whatever html we like, but again: javascript will not run this way either.
 
-The search functionality returns 404 error when there is no match. It still shows the
-same page, but the response code is 404. This was hard to notice at the beginning
-but was a key element later.
+The search functionality returns 404
+ errors when there is no match. It 
+still shows the
+same page, but the response code 
+is 404. This was hard to notice
+ at the beginning
+but became a key element later.
 
-After login we are redirected to the `/blueprints/random` page which selects
-a blueprint and redirects to e.g. `/blueprints/8ae3f361-0e6c-46af-b890-3f64a541c6ad`.
+After login we are redirected 
+to the `/blueprints/random` page 
+which selects
+a blueprint and redirects to 
+e.g. `/blueprints/8ae3f361-0e6c-46af-b890-3f64a541c6ad`.
 
-We cannot read other users' blueprints even if we know the uuid.
+We cannot read other users' 
+blueprints even if we know the uuid.
 
 ## Identifying blueprints
 
-We can use the `nickname` to inject a meta refresh tag into the html, this can
-redirect the visitor to whatever page we like. It would be nice to know from where
-the traffic is coming but unfortunately the referrer is not forwarded. At least
+We can use the `nickname` to inject 
+a meta refresh tag into the html,
+ this can
+redirect the visitor to whatever 
+page we like. It would be nice to 
+know the origin of
+the traffic but unfortunately the 
+referrer is not forwarded. At least
 that's how I solved the challenge.... But it has turned out later that we can override the referrer policy from a html meta element. Go full throttle and set it to `unsafe-url`.
 
-The combined redirect 'nickname' will be something like:
+The combined redirect 'nickname' 
+will be something like:
 
 ```html
 </title>
@@ -68,10 +82,20 @@ and we set up netcat at `example.com`:
 > nc -l 8000
 ```
 
-Ok, we can steal our own referrers by going to `https://https://initiative.secchallenge.crysys.hu/blueprints/random`.
+We can steal our own referrers 
+by going to `https://initiative.secchallenge.crysys.hu/blueprints/random`.
 
-The next step is to hijack the bot account somehow. Let's create a small html file with some JavaScript in it.
-This will send a POST request to whoever visits the page and set his own nickname to what we specify.
+The next step is to hijack the bot 
+account somehow. Let's create a 
+small html file with some JavaScript in it.
+This will send a POST request to 
+whoever visits the page and set 
+his own nickname to what we specify.
+
+We are not allowed to run scripts
+in the real website but nothing 
+prevents us from issuing a POST
+from out own site.
 
 There is a little bit of hand-waving here, and there can be small syntax errors, but our `decoy.html` would be something like:
 
