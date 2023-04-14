@@ -18,7 +18,7 @@ There is a somewhat hidden 'report' link in the bottom, that navigates to an oth
 
 <img width="717" alt="image" src="https://user-images.githubusercontent.com/6275775/232076495-8d4fada5-cabb-4a2d-90a8-d3b0be2bcfaf.png">
 
-There is a settings page as well where we can set our 'nickname' which will be set as the window title while we are logged in.
+There is a settings page as well to set our 'nickname' which will be used as the window title while we are logged in.
 
 ## Let's explore the scene some more
 
