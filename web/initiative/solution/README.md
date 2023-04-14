@@ -13,7 +13,7 @@ one by one. There is even some 'search' functionality that highlights the matchi
 
 <img width="727" alt="image" src="https://user-images.githubusercontent.com/6275775/232076164-c1c5c66e-8bfa-4080-b313-9ac4b7fd62ef.png">
 
-There is a somewhat hidden 'report' link in the bottom, that navigates to an other page where we can upload an url:
+A somewhat hidden 'report' link in the bottom navigates to an other page to upload an url:
 
 
 <img width="717" alt="image" src="https://user-images.githubusercontent.com/6275775/232076495-8d4fada5-cabb-4a2d-90a8-d3b0be2bcfaf.png">
