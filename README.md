@@ -24,6 +24,7 @@ I'll add a lot more, stay tuned.
 
 Crypto:
 - [Baby RSA](crypto/baby-rsa/solution/README.md)
+- [not-a-crypto-challenge](crypto/not-a-crypto-challenge/solution/README.md)
 
 Web:
 - [A Jim Brown and an Ella Fitzgerald](web/a-jim-brown-and-an-ella-fitzgerald/solution/README.md)
