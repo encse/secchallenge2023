@@ -127,21 +127,35 @@ the final signature(s) we should be able to check that she really follows the ru
 
 S<sub>C,1</sub> * G = 
 
-(S<sub>A,1</sub> + S<sub>B,1</sub> - o) * G = 
+from the definition of S<sub>C,1</sub>:
 
-(r<sub>A,1</sub> + o + e<sub>1</sub>(M<sub>1</sub>) * x'<sub>A</sub>) * G + (r<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)x'<sub>B</sub>) * G + o*G =
+= (S<sub>A,1</sub> + S<sub>B,1</sub> - o) * G = 
 
-R<sub>A,1</sub> + O + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> - O =
+using the definition of S<sub>A,1</sub> and S<sub>B,1</sub>:
 
-R<sub>A,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> =
+= (r<sub>A,1</sub> + o + e<sub>1</sub>(M<sub>1</sub>) * x'<sub>A</sub>) * G + (r<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)x'<sub>B</sub>) * G + o*G =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * (X'<sub>A</sub> + X'<sub>B</sub>) =
+multiply by G:
 
-R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * JK =
+= R<sub>A,1</sub> + O + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> - O =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M<sub>1</sub>) * JK
+O fells out:
 
-We can calculate the right side without S<sub>C,1</sub> from public information, so we can check that Alice is benign or not.
+= R<sub>A,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> =
+
+reorder:
+
+= R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * (X'<sub>A</sub> + X'<sub>B</sub>) =
+
+use the definition of JK:
+
+= R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * JK =
+
+from the definition of e<sub>1</sub>:
+
+= R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M<sub>1</sub>) * JK
+
+We can calculate this from public information without S<sub>C,1</sub>, so we can check that Alice is benign or not.
 
 
 
