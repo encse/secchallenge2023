@@ -6,7 +6,7 @@ Elliptic curves are a family of curves characterized by the y<sup>2</sup> = x<su
 
 <img src="https://user-images.githubusercontent.com/6275775/232182729-cda263e6-6e9d-44e6-b66b-0e51c1869605.png" width="600">
 
-There is an algebra defined for two points of the curve: we can add them together in `A + B = C` fashion, where all three variables are points `(x, y)` and satisfy the corresponding elliptic curve's equation. Similarly we can multiply a point by an integer and get an other point of the curve like `P = k * Q`. We cannot multiply or divide points with each other. (The addition is not the usual coordinate addition, something special.)
+There is an algebra defined for two points of the curve: we can add them together in `A + B = C` fashion, where all three variables are points `(x, y)` and satisfy the corresponding elliptic curve's equation. Similarly we can multiply a point by an integer and get an other point of the curve like `P = k * Q`. We cannot multiply or divide points with each other. (The operations are not the usual coordinatewise operations but something special.)
 
 We can pick a point 'G' on the curve and call it a *generator point* and get nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`; the number of elements in the group is called the *order*. I will not emphasize below but when we are talking about numbers as the multipliers of G I always mean modulo the order of the group. All computations that result a number are meant to be `% order`.
 
