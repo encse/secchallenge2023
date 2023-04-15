@@ -1,5 +1,6 @@
 # Existential CrySyS
 
+Let's start with the obvious:
 ```
 > file stage_1.whatami
 stage_1.whatami: JPEG image data, JFIF standard 1.01, aspect ratio, density 96x96, segment length 16, Exif Standard: [TIFF image data, big-endian, direntries=5, orientation=upper-left, xresolution=74, yresolution=82, resolutionunit=2TIFF image data, big-endian, direntries=5, orientation=upper-left, xresolution=74, yresolution=82, resolutionunit=2], baseline, precision 8, 192x192, components 3
