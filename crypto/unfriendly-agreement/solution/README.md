@@ -29,10 +29,10 @@ The so called public things are revealed to the other party only at some point o
 
 They know the messages as well in advance.
 
-Now A selects an other pair of `o,O` this is called the *offset*. She also makes `O` public, but keeps `o` secret. This will be the final *secret* which will be revealed when both messages are signed by both of them. 
+Alice selects an other pair of `o,O` this is called the *offset*. She also makes `O` public, but keeps `o` secret. This will be the final *secret* which will be revealed when both messages are signed by both of them. 
 
 Here comes the hash function into the picture. `H` takes a bit sequence and generates an integer. They need to agree on how to serialize keys and combine bit sequences which I'll mark with || meanining that they just put the bits after each other.
-Both A and B can compute H(X<sub>A</sub> || X<sub>B</sub>), there is no secret here. They can also compute: H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) for both `w`. 
+Both Alice and Bob can compute H(X<sub>A</sub> || X<sub>B</sub>), there is no secret here. They can also compute: H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) for both `w`. 
 
 Start from X<sub>w</sub> = x<sub>w</sub> * G they calculate this:
 
