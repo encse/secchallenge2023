@@ -38,3 +38,4 @@ Web:
 
 Misc:
 - [RemembrAI](misc/remembrai/solution/README.md)
+- [Existential CrySyS](misc/existential-crysys/solution/README.md)
