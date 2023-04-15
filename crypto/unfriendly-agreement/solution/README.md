@@ -2,7 +2,7 @@
 
 I'm not a cryptographer and never studied elliptic curves formally, so whatever you read here is probably wrong. But the lack of knowledge cannot be an issue when facing these introductory challenges. I was sure that if I find the right paper, I'll be able to solve it.
 
-Elliptic curves are a family of curves characterized by the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for different `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
+Elliptic curves are a family of curves satisfying the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for different `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
 
 <img src="https://user-images.githubusercontent.com/6275775/232182729-cda263e6-6e9d-44e6-b66b-0e51c1869605.png" width="600">
 
