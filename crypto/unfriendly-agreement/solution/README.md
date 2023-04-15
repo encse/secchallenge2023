@@ -23,7 +23,7 @@ Alice and Bob agree on a curve, G and some other details such as a Hash function
 
 Here comes the hash function into the picture. The function H takes a bit sequence and generates an integer. They need to agree on how to serialize keys and combine bit sequences which I'll just write as || without going into the specifics.
 
-Using the public informations both Alice and Bob can compute H(X<sub>A</sub> || X<sub>B</sub>), there is no secret here. They can also compute: H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) for both w. This doesn't make much sense now, but they can definitely do it. Even more if they start from their own X<sub>w</sub> = x<sub>w</sub> * G they can calculate:
+Using public information both Alice and Bob can compute H(X<sub>A</sub> || X<sub>B</sub>), there is no secret here. They can also compute: H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) for both w. This doesn't make much sense now, but they can definitely do it. Even more if they start from their own X<sub>w</sub> = x<sub>w</sub> * G they can calculate:
 
 X<sub>w</sub> * H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) = x<sub>w</sub> * H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) * G  
 
