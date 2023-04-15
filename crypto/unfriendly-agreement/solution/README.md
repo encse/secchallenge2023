@@ -21,7 +21,7 @@ I'll use small letters for secrets and capitals for public things. I'll use `w` 
 
 Alice and Bob agree on a curve, G and some other details such as a Hash function `H`, how to encode strings etc. Both parties select a persistent key x<sub>w</sub>, X<sub>w</sub> and temporal keys for both messages r<sub>w,i</sub>, R<sub>w,i</sub> where i ∈ {1, 2}. Alice also selects an other pair of o, O this is called the *offset*. She makes O public, but keeps o for herself. This will be the final *secret* which will be revealed when both messages are signed by both of them. This is 7 keys already and we haven't even started...
 
-Here comes the hash function into the picture. The function H takes a bit sequence and generates an integer. They need to agree on how to serialize keys and combine bit sequences which I'll just write it as || meanining that they put the bits after each other.
+Here comes the hash function into the picture. The function H takes a bit sequence and generates an integer. They need to agree on how to serialize keys and combine bit sequences which I'll just write as || without going into the specifics.
 
 Using the public informations both Alice and Bob can compute H(X<sub>A</sub> || X<sub>B</sub>), there is no secret here. They can also compute: H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) for both w. This doesn't make much sense now, but they can definitely do it. Even more if they start from their own X<sub>w</sub> = x<sub>w</sub> * G they can calculate:
 
