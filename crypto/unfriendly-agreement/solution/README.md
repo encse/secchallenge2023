@@ -2,13 +2,13 @@
 
 I'm not a cryptographer and never studied elliptic curves formally, so whatever you read here is probably wrong. But the lack of knowledge cannot be an issue when facing these introductory challenges. I was sure that if I find the right paper, I'll be able to solve it.
 
-Elliptic curves are a family of curves satisfying the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for different `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
+Elliptic curves are a family of curves satisfying the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for various `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
 
 <img src="https://user-images.githubusercontent.com/6275775/232182729-cda263e6-6e9d-44e6-b66b-0e51c1869605.png" width="600">
 
-There is an algebra defined for two points of the curve: we can add them together in `A + B = C` fashion, where all three variables are points `(x, y)` and satisfy the corresponding elliptic curve's equation. Similarly we can multiply a point by an integer and get an other point of the curve like `P = k * Q`. We cannot multiply or divide points with each other. (The operations are not the usual coordinatewise operations but something special.)
+There is an algebra defined for two points of the curve: we can add them together in `A + B = C` fashion, where all three variables are points `(x, y)` and satisfy the corresponding elliptic curve's equation. Similarly we can multiply a point by an integer and get an other point of the curve like `P = k * Q`. We cannot multiply or divide points with each other. It's worth mentioning that the operations are not the usual coordinate-wise operations but something special.
 
-We can pick a point 'G' on the curve and call it a *generator point* and get nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`; the number of elements in the group is called the *order*. I will not emphasize below but when we are talking about numbers as the multipliers of G I always mean modulo the order of the group. All computations that result a number are meant to be `% order`.
+We can pick a point 'G' on the curve and call it a *generator point* and get a nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`; the number of elements in the group is called the *order*. I will not emphasize below but when we are talking about numbers as the multipliers of G I always mean modulo the order of the group. All computations that result a number are meant to be `% order`.
 
 What makes this whole thing useful for cryptography is that if we agree on the curve and the generator point `G` and I pick some random `k` and a corresponding point `P = kG`, I can tell you `P` and can be sure that there is no computably feasible way for you determine my `k` anymore. At least this is true if we have the right curve, the right G and `k` is a big enough random number. So we can build an asymetric key protocol over this thing.
 
