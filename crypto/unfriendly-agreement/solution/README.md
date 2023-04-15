@@ -17,7 +17,7 @@ What makes this useful for cryptography is that if we agree on the curve and the
 After lot of searching I found this [page](https://gist.github.com/AdamISZ/d8ed3df3f540d06980e3d65b4aef70bc#2-of-2-schnorr-without-adaptor-sig
 ) which summarizes the protocol we need to use here.
 
-The idea is that A and B want to co-sign two messages M<sub>1</sub> and M<sub>2</sub>, i.e. both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops cooperating. In this case the secret should be held and the other party cannot complete the protocol either.
+The idea is that Alice and Bob want to co-sign two messages M<sub>1</sub> and M<sub>2</sub>, i.e. both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops cooperating. In this case the secret should be held and the other party cannot complete the protocol either.
 
 The steps are the following. They agree on a curve, G and some other details such as a Hash function `H`, how to encode strings etc.
 
