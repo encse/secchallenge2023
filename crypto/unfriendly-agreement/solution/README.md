@@ -10,7 +10,7 @@ There is an algebra defined for two points of the curve: we can add them togethe
 
 We can pick a point 'G' on the curve and call it a *generator point* and get nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`; the number of elements in the group is called the *order*. I will not emphasize below but when we are talking about numbers as the multipliers of G I always mean modulo the order of the group. All computations that result a number are meant to be `% order`.
 
-What makes this useful for cryptography is that if we agree on the curve and the generator point `G` and I pick some random `k` and a corresponding point `P = kG`, I can tell you `P` and can be sure that there is no computably feasible way for you determine my `k` anymore. At least this is true if we have the right curve, the right G and `k` is a big enough random number. So we can build an asymetric key protocol over this thing.
+What makes this whole thing useful for cryptography is that if we agree on the curve and the generator point `G` and I pick some random `k` and a corresponding point `P = kG`, I can tell you `P` and can be sure that there is no computably feasible way for you determine my `k` anymore. At least this is true if we have the right curve, the right G and `k` is a big enough random number. So we can build an asymetric key protocol over this thing.
 
 ## Preliminary steps
 
