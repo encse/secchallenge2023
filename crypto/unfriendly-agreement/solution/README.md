@@ -139,7 +139,7 @@ R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * (X'<sub>A</su
 
 R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * JK =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M) * JK
+R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M<sub>1</sub) * JK
 
 We can calculate the right side without S<sub>C,1</sub> from public information, so we can check that Alice is benign or not.
 
