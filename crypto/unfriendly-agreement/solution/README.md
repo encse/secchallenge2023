@@ -15,7 +15,7 @@ What makes this whole thing useful for cryptography is that if we agree on the c
 ## Preliminary steps
 
 After lot of searching I found this [page](https://gist.github.com/AdamISZ/d8ed3df3f540d06980e3d65b4aef70bc#2-of-2-schnorr-without-adaptor-sig
-) which summarizes the protocol we need to use here. It is slightly different from what's going on here, so it's better to follow my writeup. I'll work with the challenge's notation. The idea is that Alice and Bob needs to co-sign two messages M<sub>1</sub> and M<sub>2</sub>. Both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops co-operating. In this case the secret should be held and the other party shouldn't be able to finish the protocol either.
+) which summarizes the protocol we need to use here. It is slightly different from what's going on here, so it's better to follow my writeup. I'll work with the challenge's notation. The idea is that Alice and Bob needs to co-sign two messages M<sub>1</sub> and M<sub>2</sub>. Both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and the protocol guarantees that if one party stops co-operating the secret is held and the other party is not able to finish it alone.
 
 I'll use small letters for secrets and capitals for public things. I'll use `w` to mean A or B.
 
