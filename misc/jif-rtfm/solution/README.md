@@ -3,7 +3,7 @@
 The challenge was about the obsolete Gif Plaintext Extension feature. 
 You can read about it here https://www.w3.org/Graphics/GIF/spec-gif89a.txt.
 
-Somebody at one point in the past thought that it's a good idea to encode 
+Somebody at one point in the past thought that it would be a good idea to encode 
 texts in gif files that can be shown by gif players. No sane player supports 
 this today, that goes without saying.
 
