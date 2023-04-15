@@ -2,15 +2,13 @@
 
 I'm not a cryptographer and never studied elliptic curves formally, so whatever you read here is probably wrong. But the lack of knowledge cannot be an issue when facing these introductory challenges. I was sure that if I find the right paper, I'll be able to solve it.
 
-I don't know much about elliptic curves, they are a family of curves caracterized by the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for different `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
+Elliptic curves are a family of curves caracterized by the y<sup>2</sup> = x<sup>3</sup> + ax + b equation for different `a` and `b` parameters. If we plot the points of such an implicit equation we see something like this:
 
-![image](https://user-images.githubusercontent.com/6275775/232182729-cda263e6-6e9d-44e6-b66b-0e51c1869605.png)
+<img src="https://user-images.githubusercontent.com/6275775/232182729-cda263e6-6e9d-44e6-b66b-0e51c1869605.png" width="600">
 
 There is an algebra defined for two points of the curve: we can add them together in `A + B = C` fashion, where all three variables are points `(x, y)` and satisfy the corresponding elliptic curve's equation. Similarly we can multiply a point by an integer and get an other point of the curve like `P = k * Q`. We cannot multiply or divide points with each other.
 
-We can pick a point 'G' on the curve and call it a *generator point* and get nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`, it also has an order (the number of elements in the group).
-
-I will not emphasize below but when we are talking about scalars as the members of the group I always mean mod the order of the group. So all computations are to be meant to be finished with `% order`.
+We can pick a point 'G' on the curve and call it a *generator point* and get nice *group* of points by multiplying `G` with different numbers `{nG | n ∈ ℤ}`; the number of elements in the group is called the *order*. I will not emphasize below but when we are talking about numbers as the multipliers of G I always mean modulo the order of the group. All computations that result a number are meant to be `% order`.
 
 What makes this useful for cryptography is that if we agree on the curve and the generator point `G` and I pick some random `k` and a corresponding point `P = kG`, I can tell you `P` and can be sure that there is no computably feasible way for you determine my `k` anymore. At least this is true if we have the right curve, the right G and `k` is a big enough random number. So we can build an asymetric key protocol over this thing.
 
@@ -21,9 +19,9 @@ After lot of searching I found this [page](https://gist.github.com/AdamISZ/d8ed3
 
 The idea is that A and B want to co-sign two messages M<sub>1</sub> and M<sub>2</sub>, i.e. both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops cooperating. In this case the secret should be held and the other party cannot complete the protocol either.
 
-The steps are the following. They agree on a curve, G and some other minor things such as a Hash function `H`, how to encode strings etc. but that is not important for this part.
+The steps are the following. They agree on a curve, G and some other details such as a Hash function `H`, how to encode strings etc.
 
-I'll use small letters for secrets (or integers) and capitals (or points of the curve) for public things. I'll use `w` to mean `A` or `B`.
+I'll use small letters for secrets (or integers) and capitals (or points of the curve) for public things. I'll use `w` to mean A or B.
 
 Both parties select a persistent key x<sub>w</sub>, X<sub>w</sub> and temporal keys for both messages r<sub>w,i</sub>, R<sub>w,i</sub> where i ∈ {1, 2}. This is 6 keys already and we haven't even started...
 
@@ -56,46 +54,46 @@ For any integer m (or message) they can also compute:
 
 That's a lot of information to consume let's take a break.
 
-![image](https://user-images.githubusercontent.com/6275775/232190405-3688161d-c09e-45c2-8369-6ea2ab6dcb18.png)
+<img src="https://user-images.githubusercontent.com/6275775/232190405-3688161d-c09e-45c2-8369-6ea2ab6dcb18.png" width="600">
 
 
 ## The signing process 
 
-We can finally start signing some messages. `A` starts with m<sub>1</sub>:
+We can finally start signing some messages. Alice starts with m<sub>1</sub>:
 
-S<sub>A,1</sub> = r<sub>A</sub> + o + e(m<sub>1</sub>)x'<sub>A</sub>
+S<sub>A,1</sub> = r<sub>A,1</sub> + o + e(m<sub>1</sub>)x'<sub>A</sub>
 
 S<sub>A,1</sub> is the signature, it is number (not point) that is made public (hence capital).
 
-`B` can check that it really comes from `A`. The below equations are frightening, but you only need to remember that our notation is set up so that 'lowercase becomes uppercase when multiplied by G':
+Bob can check that this really originates from Alice. The below equations look frightening, but you only need to remember that our notation is set up so that 'lowercase becomes uppercase when multiplied by G':
 
 S<sub>A,1</sub> * G = 
 
-(r<sub>A</sub> + o + e(m<sub>1</sub>)x'<sub>A</sub>) * G = 
+(r<sub>A,1</sub> + o + e(m<sub>1</sub>)x'<sub>A</sub>) * G = 
 
-r<sub>A</sub>G + oG + e(m<sub>1</sub>)x'<sub>A</sub> * G = 
+r<sub>A,1</sub>G + oG + e(m<sub>1</sub>)x'<sub>A</sub> * G = 
 
-R<sub>A</sub> + O + e(m<sub>1</sub>) * X'<sub>A</sub>
+R<sub>A,1</sub> + O + e(m<sub>1</sub>) * X'<sub>A</sub>
 
-Everything in the last line is common knowledge, so if A is not rouge, B can assert that: 
+Everything in the last line is common knowledge. If A is not rouge, B can check that: 
 
-S<sub>A,1</sub> * G = R<sub>A</sub> + O + e(m<sub>1</sub>) * X'<sub>A</sub> 
+S<sub>A,1</sub> * G = R<sub>A,1</sub> + O + e(m<sub>1</sub>) * X'<sub>A</sub> 
 
 As you work on the solution you should add asserts like this to the code you are writing to see that you are on track.
 
-Once `B` is satisfied with `A`'s signature he generates his part:
+Once Bob is satisfied with Alice's signature he generates his part:
 
-S<sub>B,1</sub> = r<sub>B</sub>  + e(m<sub>1</sub>)x'<sub>B</sub>.
+S<sub>B,1</sub> = r<sub>B,1</sub>  + e(m<sub>1</sub>)x'<sub>B</sub>.
 
-He doesn't have an offset, so it is not added to r<sub>B</sub>, but `A` can still check that it comes from `B`, the same way as above:
+He doesn't have an offset, so it is not added to r<sub>B,1</sub>, but Alice can still check that it comes from Bob the same way as above:
 
-S<sub>B,1</sub> * G =  ... = R<sub>B</sub>  + e(m<sub>1</sub>)X'<sub>B</sub>
+S<sub>B,1</sub> * G =  ... = R<sub>B,1</sub>  + e(m<sub>1</sub>)X'<sub>B</sub>
 
-`A` is happy, so she signs the second message, and B answers:
+Alice is happy, so she signs the second message, and B answers:
 
-S<sub>A,2</sub> = r<sub>A</sub> + o + e(m<sub>2</sub>)x'<sub>A</sub>
+S<sub>A,2</sub> = r<sub>A,2</sub> + o + e(m<sub>2</sub>)x'<sub>A</sub>
 
-S<sub>B,2</sub> = r<sub>B</sub> + e(m<sub>2</sub>)x'<sub>B</sub>
+S<sub>B,2</sub> = r<sub>B,2</sub> + e(m<sub>2</sub>)x'<sub>B</sub>
 
 A has all the information, but she still needs to compute the final signatures (C for common):
 
@@ -115,23 +113,21 @@ That's all the math we need for the challenge.
 
 ## Solving the challenge
 
-After all of this we preparation we can solve quite easily.
+After all of this preparation we can solve quite easily. First we compute S<sub>B,1</sub> and S<sub>B,2</sub>:
 
-First we compute S<sub>B,1</sub> and S<sub>B,2</sub>:
+S<sub>B,1</sub> = r<sub>B,1</sub>  + e(m<sub>1</sub>)x'<sub>B</sub>
 
-S<sub>B,1</sub> = r<sub>B</sub>  + e(m<sub>1</sub>)x'<sub>B</sub>
-
-S<sub>B,2</sub> = r<sub>B</sub>  + e(m<sub>2</sub>)x'<sub>B</sub>
+S<sub>B,2</sub> = r<sub>B,2</sub>  + e(m<sub>2</sub>)x'<sub>B</sub>
 
 we need to compute e and x'<sub>B</sub> as well, but we have everything for these, see (1) and (2) above.
 
-Next, using the final signature we can work backwards and compute o:
+Next, using the final signature of the first message, we can work backwards and compute o:
 
 o = S<sub>A,1</sub> + S<sub>B,1</sub> - S<sub>C,1</sub>
 
-And finally we get S<sub>C,2</sub> with:
+And finally determine S<sub>C,2</sub> with:
 
 S<sub>C,2</sub> = S<sub>A,2</sub> + S<sub>B,2</sub> - o
 
-This gives us the flag.
+The flag is this number wrapped in the usual `cd23{...}` thing.
 
