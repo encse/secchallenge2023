@@ -122,7 +122,7 @@ The flag is this number S<sub>C,2</sub> wrapped in the usual `cd23{...}` format.
 
 ## Appendix
 
-I cannot stop without sheding some light on why we need this complicated 'e'. The idea is that once Alice publishes 
+I cannot stop without sheding some light on why we need this complicated e and JK. The idea is that once Alice publishes 
 the final signature(s) we should be able to check that she really follows the rules and not trying to trick us. This is because:
 
 S<sub>C,1</sub> * G = 
