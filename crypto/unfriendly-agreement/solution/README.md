@@ -155,7 +155,8 @@ from the definition of e<sub>1</sub>:
 
 = R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M<sub>1</sub>) * JK
 
-We can calculate this from public information without S<sub>C,1</sub>, so we can check that Alice is benign or not.
+We can calculate this from public information without S<sub>C,1</sub>. And once we get S<sub>C,1</sub> from Alice
+we just multiply it with G and check if the equation holds.
 
 
 
