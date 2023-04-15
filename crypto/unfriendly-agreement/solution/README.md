@@ -15,7 +15,7 @@ What makes this useful for cryptography is that if we agree on the curve and the
 ## Preliminary steps
 
 After lot of searching I found this [page](https://gist.github.com/AdamISZ/d8ed3df3f540d06980e3d65b4aef70bc#2-of-2-schnorr-without-adaptor-sig
-) which summarizes the protocol we need to use here. The idea is that Alice and Bob needs to co-sign two messages M<sub>1</sub> and M<sub>2</sub>. Both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops cooperating. In this case the secret should be held and the other party cannot finish the protocol either.
+) which summarizes the protocol we need to use here. It is slightly different from what's going on here, so it's better to follow my writeup. I'll work with the challenge's notation. The idea is that Alice and Bob needs to co-sign two messages M<sub>1</sub> and M<sub>2</sub>. Both of them needs to sign both messages, and they want to exchange some secret as soon as this happens. This takes multiple steps and it can happen that one party stops cooperating. In this case the secret should be held and the other party cannot finish the protocol either.
 
 I'll use small letters for secrets and capitals for public things. I'll use `w` to mean A or B.
 
@@ -119,4 +119,35 @@ And finally determine S<sub>C,2</sub> with:
 S<sub>C,2</sub> = S<sub>A,2</sub> + S<sub>B,2</sub> - o
 
 The flag is this number S<sub>C,2</sub> wrapped in the usual `cd23{...}` format.
+
+## Appendix
+
+I cannot stop without sheding some light on why we need this complicated 'e'. The idea is that once Alice publishes 
+the final signature(s) we should be able to check that she really follows the rules and not trying to trick us. This is because:
+
+S<sub>C,1</sub> * G = 
+
+(S<sub>A,1</sub> + S<sub>B,1</sub> - o) * G = 
+
+(r<sub>A,1</sub> + o + e(M<sub>1</sub>) * x'<sub>A</sub>) * G + (r<sub>B,1</sub>  + e(M<sub>1</sub>)x'<sub>B</sub>) * G + o*G =
+
+R<sub>A,1</sub> + O + e(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e(M<sub>1</sub>)X'<sub>B</sub> - O =
+
+R<sub>A,1</sub> + e(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e(M<sub>1</sub>)X'<sub>B</sub> =
+
+R<sub>A,1</sub> + R<sub>B,1</sub> + e(M<sub>1</sub>) * (X'<sub>A</sub> + X'<sub>B</sub>) =
+
+R<sub>A,1</sub> + R<sub>B,1</sub> + e(M<sub>1</sub>) * JK =
+
+R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A</sub> + R<sub>B</sub> || M) * JK
+
+We can calculate the right side without S<sub>C,1</sub> from public information, so we can check that Alice is benign or not.
+
+
+
+
+
+
+
+
 
