@@ -31,9 +31,9 @@ We should give names to these:
 
 (1) X'<sub>w</sub> := X<sub>w</sub> * H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) 
 
-(2) x'<sub>w</sub> := x<sub>w</sub> * H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>) * G
+(2) x'<sub>w</sub> := x<sub>w</sub> * H(H(X<sub>A</sub> || X<sub>B</sub>) || X<sub>w</sub>)
 
-They don't know each other's x'<sub>w</sub>, but they can compute the corresponding X'<sub>w</sub> from the public X<sub>w</sub>. The sum of X'<sub>A</sub> and X'<sub>B</sub> will be called the temporal common public key, which I'll write with JK. They can determine this from public information.
+They don't know each other's x'<sub>w</sub>, but they can compute the corresponding X'<sub>w</sub> from the public X<sub>w</sub>. The sum of X'<sub>A</sub> and X'<sub>B</sub> will be called the temporal joint key, which I'll write as JK. They can determine this from public information.
 
 JK = X'<sub>A</sub> + X'<sub>B</sub> 
 
