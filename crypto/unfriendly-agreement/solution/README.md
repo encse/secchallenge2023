@@ -39,7 +39,7 @@ JK = X'<sub>A</sub> + X'<sub>B</sub>
 
 For any integer M (or message) they can also compute:
 
-(3) e(M) = H(JK || R<sub>A</sub> + R<sub>B</sub> || M)
+(3) e<sub>i</sub>(M) = H(JK || R<sub>A,i</sub> + R<sub>B,i</sub> || M)
 
 That's a lot of information to consume let's take a break.
 
@@ -50,7 +50,7 @@ That's a lot of information to consume let's take a break.
 
 We can finally start signing some messages. Alice starts with M<sub>1</sub>:
 
-S<sub>A,1</sub> = r<sub>A,1</sub> + o + e(M<sub>1</sub>)x'<sub>A</sub>
+S<sub>A,1</sub> = r<sub>A,1</sub> + o + e<sub>1</sub>(M<sub>1</sub>)x'<sub>A</sub>
 
 S<sub>A,1</sub> is the signature, it is number (not point) that is made public (hence capital).
 
@@ -58,31 +58,31 @@ Bob can check that this really originates from Alice. The below equations look f
 
 S<sub>A,1</sub> * G = 
 
-(r<sub>A,1</sub> + o + e(M<sub>1</sub>)x'<sub>A</sub>) * G = 
+(r<sub>A,1</sub> + o + e<sub>1</sub>(M<sub>1</sub>)x'<sub>A</sub>) * G = 
 
-r<sub>A,1</sub>G + oG + e(M<sub>1</sub>)x'<sub>A</sub> * G = 
+r<sub>A,1</sub>G + oG + e<sub>1</sub>(M<sub>1</sub>)x'<sub>A</sub> * G = 
 
-R<sub>A,1</sub> + O + e(M<sub>1</sub>) * X'<sub>A</sub>
+R<sub>A,1</sub> + O + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub>
 
 Everything in the last line is common knowledge. If A is not rouge, B can check that: 
 
-S<sub>A,1</sub> * G = R<sub>A,1</sub> + O + e(M<sub>1</sub>) * X'<sub>A</sub> 
+S<sub>A,1</sub> * G = R<sub>A,1</sub> + O + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> 
 
 As you work on the solution you should add asserts like this to the code you are writing to see that you are on track.
 
 Once Bob is satisfied with Alice's signature he generates his part:
 
-S<sub>B,1</sub> = r<sub>B,1</sub>  + e(M<sub>1</sub>)x'<sub>B</sub>.
+S<sub>B,1</sub> = r<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)x'<sub>B</sub>.
 
 He doesn't have an offset, so it is not added to r<sub>B,1</sub>, but Alice can still check that it comes from Bob the same way as above:
 
-S<sub>B,1</sub> * G =  ... = R<sub>B,1</sub>  + e(M<sub>1</sub>)X'<sub>B</sub>
+S<sub>B,1</sub> * G =  ... = R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub>
 
 Alice is happy, so she signs the second message, and B answers:
 
-S<sub>A,2</sub> = r<sub>A,2</sub> + o + e(M<sub>2</sub>)x'<sub>A</sub>
+S<sub>A,2</sub> = r<sub>A,2</sub> + o + e<sub>2</sub>(M<sub>2</sub>)x'<sub>A</sub>
 
-S<sub>B,2</sub> = r<sub>B,2</sub> + e(M<sub>2</sub>)x'<sub>B</sub>
+S<sub>B,2</sub> = r<sub>B,2</sub> + e<sub>2</sub>(M<sub>2</sub>)x'<sub>B</sub>
 
 Alice now has everything, but she still needs to compute and publish the final signatures (C for common):
 
@@ -104,9 +104,9 @@ That's all the math we need for the challenge.
 
 After all of this preparation we can solve it quite easily. First we compute S<sub>B,1</sub> and S<sub>B,2</sub>:
 
-S<sub>B,1</sub> = r<sub>B,1</sub>  + e(M<sub>1</sub>)x'<sub>B</sub>
+S<sub>B,1</sub> = r<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)x'<sub>B</sub>
 
-S<sub>B,2</sub> = r<sub>B,2</sub>  + e(M<sub>2</sub>)x'<sub>B</sub>
+S<sub>B,2</sub> = r<sub>B,2</sub>  + e<sub>2</sub>(M<sub>2</sub>)x'<sub>B</sub>
 
 we need to compute e and x'<sub>B</sub> as well, but we have everything for these, see (1) (2) and (3) above.
 
@@ -129,17 +129,17 @@ S<sub>C,1</sub> * G =
 
 (S<sub>A,1</sub> + S<sub>B,1</sub> - o) * G = 
 
-(r<sub>A,1</sub> + o + e(M<sub>1</sub>) * x'<sub>A</sub>) * G + (r<sub>B,1</sub>  + e(M<sub>1</sub>)x'<sub>B</sub>) * G + o*G =
+(r<sub>A,1</sub> + o + e<sub>1</sub>(M<sub>1</sub>) * x'<sub>A</sub>) * G + (r<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)x'<sub>B</sub>) * G + o*G =
 
-R<sub>A,1</sub> + O + e(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e(M<sub>1</sub>)X'<sub>B</sub> - O =
+R<sub>A,1</sub> + O + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> - O =
 
-R<sub>A,1</sub> + e(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e(M<sub>1</sub>)X'<sub>B</sub> =
+R<sub>A,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * X'<sub>A</sub> + R<sub>B,1</sub>  + e<sub>1</sub>(M<sub>1</sub>)X'<sub>B</sub> =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> + e(M<sub>1</sub>) * (X'<sub>A</sub> + X'<sub>B</sub>) =
+R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * (X'<sub>A</sub> + X'<sub>B</sub>) =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> + e(M<sub>1</sub>) * JK =
+R<sub>A,1</sub> + R<sub>B,1</sub> + e<sub>1</sub>(M<sub>1</sub>) * JK =
 
-R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A</sub> + R<sub>B</sub> || M) * JK
+R<sub>A,1</sub> + R<sub>B,1</sub> +  H(JK || R<sub>A,1</sub> + R<sub>B,1</sub> || M) * JK
 
 We can calculate the right side without S<sub>C,1</sub> from public information, so we can check that Alice is benign or not.
 
