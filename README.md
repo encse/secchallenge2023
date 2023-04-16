@@ -20,7 +20,7 @@ and hobbyists.
 
 ## Write-ups
 
-I'll add a lot more, stay tuned.
+I'll add some more, stay tuned.
 
 Crypto:
 - [raw power](crypto/raw-power/solution/README.md)
@@ -40,3 +40,6 @@ Misc:
 - [RemembrAI](misc/remembrai/solution/README.md)
 - [Existential CrySyS](misc/existential-crysys/solution/README.md)
 - [jif.rtfm](misc/jif-rtfm/solution/README.md)
+
+Hardware:
+- [Refinery](hardware/refinery/solution/README.md)
