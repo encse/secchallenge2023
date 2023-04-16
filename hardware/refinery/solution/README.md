@@ -106,7 +106,7 @@ I read them as some kind of logic diagrams where `( )` means the trueness of an 
 
 This means that if we want to turn  `petroleum_input` on we need to `force_start` and `manual_mode` and we should not have the `sensor_high` on. We can control the first two, the last is based on how much petroleum is in the column tank.
 
-Likewise if `sensor_low` is true `heater_power` becomes off. If `manual_mode` is false then `heater_power` is true. Finally if `sensor_high` is true then `petroleum_input` is off.
+Likewise if `sensor_high` is true then `petroleum_input` is off. The other two is your homework.
 
 ## Is this thing on?
 
