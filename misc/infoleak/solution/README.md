@@ -5,7 +5,10 @@ I read the news about the depixelation challenge and how it was solved last year
 The tool that we had to use was indeed Depix, with the following parameters:
 
 ```shell
-depix -p ./cut.png -s ./Depix-main/images/searchimages/debruinseq_notepad_Windows10_closeAndSpaced.png -o depixelized.png --averagetype linear
+depix -p ./cut.png \
+-s ./Depix-main/images/searchimages/debruinseq_notepad_Windows10_closeAndSpaced.png  \
+-o depixelized.png \
+--averagetype linear
 ```
 
 The `--averagetype linear` part is very important here!
