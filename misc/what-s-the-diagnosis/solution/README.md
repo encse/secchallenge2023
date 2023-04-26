@@ -44,12 +44,11 @@ same password everywhere, so this seems to be the next logical step.
 
 
 This is how a packet looks before:
-
-<img width="586" alt="image" src="https://user-images.githubusercontent.com/6275775/234603121-36b0459e-f327-4233-a245-4d6fe79124a8.png">
+<img width="1003" alt="image" src="https://user-images.githubusercontent.com/6275775/234614298-3b5132e7-560c-4316-bf38-0bee6706bf05.png">
 
 and after:
 
-<img width="999" alt="image" src="https://user-images.githubusercontent.com/6275775/234603494-acf1c4d6-c4ee-4df2-94e8-e543e89cd7c8.png">
+<img width="1001" alt="image" src="https://user-images.githubusercontent.com/6275775/234614074-160ecd63-a613-4c39-8c39-0ffa9c4f293b.png">
 
 the 'User-Password' field became readable. It looks like some base64 encoded string. Surely enough
 if we collect all strings (there are about 40) all of them are similar, but one string starts with 
