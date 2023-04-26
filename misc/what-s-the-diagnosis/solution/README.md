@@ -25,7 +25,7 @@ This means:
 | 00?1?1?1?1?1?1  | password format; ?1 means 'use the first charset'          |
 
 
-this would have taken too much time in my MackBook Air which doesn't have an
+this would have taken too much time for my MackBook Air which doesn't have an
 active cooling. So I asked for more help, then one of the organizers told me that the
 third letter is 'r'. Meanwhile I set up a GPU instance on AWS and could bruteforce the
 remaining 5 characters in a few minutes.
