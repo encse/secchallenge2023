@@ -61,8 +61,8 @@ they were born and suddenly the base64 string started to make sense. I
 just concatenated it and opened in the browser. It was a QR code, maybe the flag? But I was rickrolled the
 1000th times during the challenge.... 
 
-I was close to giving up because this seemd like a dead end, albeit a lot of work went into it. I tried
-binwalk, strings, zstego on the image but nothing helped. I checked the other packages in the capture files
+I was close to giving up because this seemed like a dead end... albeit a lot of work went into it. I tried
+`binwalk`, `strings`, `zsteg` on the image but nothing helped. I checked the other packages in the capture files
 hoping for some hints, but I couldn't find anything. A week later I talked to Pepe who said that
 [zsteg](https://github.com/zed-0xff/zsteg) was the necessary tool. But I remembered trying it before... 
 At the end it has turned out that
