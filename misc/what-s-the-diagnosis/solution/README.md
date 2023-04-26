@@ -39,7 +39,7 @@ option to set the 'shared secret':
 
 <img width="686" alt="image" src="https://user-images.githubusercontent.com/6275775/234602053-1a260169-cb61-4e63-b0f1-02e6cef0b7c8.png">
 
-Set the WIFI password here.  We know from the task description that the doctors used the 
+Set the WIFI password here (skip the `00`, start with `r`).  We know from the task description that the doctors used the 
 same password everywhere, so this seems to be the next logical step.
 
 
