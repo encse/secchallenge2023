@@ -64,8 +64,9 @@ just concatenated it and opened in the browser. It was a QR code, maybe the flag
 I was close to giving up because this seemd like a dead end, albeit a lot of work went into it. I tried
 binwalk, strings, zstego on the image but nothing helped. I checked the other packages in the capture files
 hoping for some hints, but I couldn't find anything. A week later I talked to Pepe who said that
-`zstego` was the necessary tool. But I remembered trying it before... At the end it has turned out that
-my zstego version was too old (from last year) and it was throwing and exception for this particular image.
+[zsteg](https://github.com/zed-0xff/zsteg) was the necessary tool. But I remembered trying it before... 
+At the end it has turned out that
+my zsteg version was too old (lying around from last year) and it was throwing and exception for this particular image.
 After installing the latest version it could find the flag which is somehow hidden in the palette of the image.
 
 This has been a real 'misc' challenge with some WTF on the top :D
