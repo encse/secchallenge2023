@@ -3,7 +3,7 @@
 I couldn't solve this challenge on my own, but got some extra spoliers after the contest. The first step was clear:
 we need to do something with the wifi password that seems to start with `00`.
 
-I took `hospital_wifi.cap` and converted to a format that can be fed into `hashcat` with:
+I took `hospital_wifi.cap` and converted to a format that can be feed into `hashcat` with:
 
 ```
 hcxpcapngtool -o hash.hc22000 hospital_wifi.cap
